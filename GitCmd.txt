@@ -1,0 +1,23 @@
+…or create a new repository on the command line
+echo "# hello" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/elzenary/CPP-ND.git
+git push -u origin master
+                
+…or push an existing repository from the command line
+git remote add origin https://github.com/elzenary/CPP-ND.git
+git push -u origin master
+
+
+git remote rm origin
+git remote
+
+git config --global --unset http.proxy
+
+/*file into staging area*/
+git add *
+git add fileName
+git pull origin master
+git pull origin master --allow-unrelated-histories
