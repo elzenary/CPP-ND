@@ -9,7 +9,7 @@ using std::istringstream;
 using std::string;
 using std::vector;
 
-enum class State {kEmpty, kObstacle};
+enum class State {kEmpty, kObstacle};/*class enum or ranged enum starting from c++11*/
 
 vector<State> ParseLine(string line) {
     istringstream sline(line);
