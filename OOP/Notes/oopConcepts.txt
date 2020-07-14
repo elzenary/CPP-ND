@@ -1,0 +1,21 @@
+abstraction the user is not intersted in implementations details and use another class decleration
+encapsulation all te related attributes and behaviours and encapsulated in one class and setters and getters can be used for
+invariants checks
+abstraction and encapsulations are related concepts
+to achieve that we have access specifiers public private and protected
+if all the elements haven't invarients it is better to use struct instead
+difference between struct and classes is the access specifer default (public in struct and private in class)
+pure virtual function make no instance possible from the class
+interface is a class all of its elements pure virtual function
+abstract class is a class some of its elements are pure virtual functions
+this is for standardization and these classes needs to be inherited and overloaded
+inheritance takes the behaviours and attributes from the parent then extend
+overiding is done by inherit from base class then overide one of it virtual function
+if the based class function isn't virtual then it is not overiding , just function hiding
+by overiding if we make pointer from base class and make it refer to on of the children then 
+the oviridden function of the child will be used (dynamic binding)
+otherwise of not virtual (noveride) then in this case parent function will be called
+it is recommended to use override keyword to catch errors by compiler if no virtual is available to be overwritten
+multi level inheritance class1 inherit class2 and class3 inherit class2
+multiple inheritance class3 inherits directly class1 and 2
+c++ supports multiple inheritance but it is risky because it may itroduce diamond problem
