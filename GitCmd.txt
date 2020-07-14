@@ -21,6 +21,3 @@ git add *
 git add fileName
 git pull origin master
 git pull origin master --allow-unrelated-histories
-
-
-Using GitHub desktop adterwards to avoid using cmd
