@@ -19,3 +19,13 @@ it is recommended to use override keyword to catch errors by compiler if no virt
 multi level inheritance class1 inherit class2 and class3 inherit class2
 multiple inheritance class3 inherits directly class1 and 2
 c++ supports multiple inheritance but it is risky because it may itroduce diamond problem
+The word polymorphism means having many forms.
+oveloading and overiding are types of plymorphism
+The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
+generic programming (templates) are type of polymorphism because it generalizes the parameter used in functions and classes
+example STL >> standard template library
+this generic programming is instead of making iheritance and overiding or overloading with different types
+the algorithm is paramterized by the template and works
+templates are substituted at compile time
+concepts in c++20 specify template requirements for the aruments but before that any type can be passed
+template deduction if don't specify the templated type compiler will automatically deduct it from the value
