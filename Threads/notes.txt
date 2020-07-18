@@ -1,0 +1,7 @@
+concurrent programming means many thing happen at the same time
+if multi cpu system then it is real
+if single cpu then it is illusion 
+concurrency can be done in both cases
+processes managed by os and have different address spaace and have overhead
+threads are light process within one process
+shared data synchronization must be ensured during threads because it is programmer responsibility
