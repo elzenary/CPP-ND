@@ -5,4 +5,9 @@ concurrency can be done in both cases
 processes managed by os and have different address spaace and have overhead but used in distrubted systems
 threads are light process within one process ease od use
 shared data synchronization must be ensured during threads because it is programmer responsibility
+main is considered thread, main thread should wait other threads before finshings otherwise threads will be terminating by os
+if you detach thread then will not be able to joing again 
+threads if firsted supported by the standard language since c++11
+threads creation wait join detach randomness
+
 g++ --std=c++11  -pthread example.cpp ./a.out

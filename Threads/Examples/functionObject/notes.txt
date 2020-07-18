@@ -1,0 +1,3 @@
+A function object, or functor, is any type that implements operator(). This operator is referred to as the call operator or sometimes the application operator. The C++ Standard Library uses function objects primarily as sorting criteria for containers and in algorithms.
+
+Function objects provide two main advantages over a straight function call. The first is that a function object can contain state. The second is that a function object is a type and therefore can be used as a template parameter.
