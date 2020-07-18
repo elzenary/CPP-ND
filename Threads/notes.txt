@@ -11,3 +11,9 @@ threads if firsted supported by the standard language since c++11
 threads creation wait join detach randomness
 
 g++ --std=c++11  -pthread example.cpp ./a.out
+
+In C++, callable objects are object that can appear as the left-hand operand of the call operator. These can be
+ pointers to functions, 
+ objects of a class that defines an overloaded function call operator and
+ lambdas (an anonymous inline function), with which function objects can be created in a very simple way.
+ In the context of concurrency, we can use callable objects to attach a function to a thread.
