@@ -1,0 +1,41 @@
+http://www.fredosaurus.com/notes-cpp/oop-condestructors/copyconstructors.html#:~:text=A%20copy%20constructor%20is%20called,initialized%20from%20another%20object%2C%20eg%2C&text=f(p)%3B%20%2F%2F%20copy,is%20returned%20by%20a%20function.
+
+When copies of objects are made
+A copy constructor is called whenever a new variable is created from an object. This happens in the following cases (but not in assignment).
+
+A variable is declared which is initialized from another object, eg,
+Person q("Mickey"); // constructor is used to build q.
+Person r(p);        // copy constructor is used to build r.
+Person p = q;       // copy constructor is used to initialize in declaration.
+p = q;              // Assignment operator, no constructor or copy constructor.
+A value parameter is initialized from its corresponding argument.
+f(p);               // copy constructor initializes formal value parameter.
+An object is returned by a function.
+C++ calls a copy constructor to make a copy of an object in each of the above cases. If there is no copy constructor defined for the class, C++ uses the default copy constructor which copies each field, ie, makes a shallow copy.
+
+Don't write a copy constructor if shallow copies are ok
+If you need a copy constructor, you also need a destructor and operator=
+
+Copy constructor syntax
+The copy constructor takes a reference to a const parameter. It is const to guarantee that the copy constructor doesn't change it, and it is a reference because a value parameter would require making a copy, which would invoke the copy constructor, which would make a copy of its parameter, which would invoke the copy constructor, which ...
+
+Here is an example of a copy constructor for the Point class, which doesn't really need one because the default copy constructor's action of copying fields would work fine, but it shows how it works.
+
+//=== file Point.h =============================================
+class Point {
+    public:
+        . . .
+        Point(const Point& p);   // copy constructor
+        . . .
+//=== file Point.cpp ==========================================
+. . .
+Point::Point(const Point& p) {
+    x = p.x;
+    y = p.y;
+}
+    . . .
+//=== file my_program.cpp ====================================
+. . .
+Point p;            // calls default constructor
+Point s = p;        // calls copy constructor.
+p = s;              // assignment, not copy constructor.
