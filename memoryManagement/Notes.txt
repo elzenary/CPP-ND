@@ -1,0 +1,9 @@
+resource are created in the open of the scope and dealocated at the end of the scope
+{} are the responsible for defining scopes
+
+Overview of memory management problems
+Memory Leaks
+Buffer Overruns
+Uninitialized Memory
+Incorrect pairing of allocation and deallocation
+Invalid memory access
