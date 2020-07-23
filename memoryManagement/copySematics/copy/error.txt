@@ -1,0 +1,9 @@
+The output of the program looks like the following:
+
+
+Own address on the stack is 0x7ffeefbff670
+Managing memory block on the heap at 0x100300060
+Own address on the stack is 0x7ffeefbff658
+Managing memory block on the heap at 0x100300060
+copy_constructor_1(87582,0x1000a95c0) malloc: *** error for object 0x100300060: pointer being freed was not allocated
+Note that in the workspace, the error will read: *** Error in './a.out': double free or corruption (fasttop): 0x0000000001133c20 ***

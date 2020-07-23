@@ -5,6 +5,8 @@ is it possible to increase this space in runtime
 To increase stack size you need to use special compilation flag or #pragma
 Example gcc -Wl,--stack,4194304 -o program program.c
 
+.bss and .data are allocated based on your code variables
+
 the heap is almost always extended dynamically by asking the OS for more memory as needed.
  On some embedded platforms, or some very old platforms this may not be true, 
  process relies on the OS to tell it that it can't have any more memory. 

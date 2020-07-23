@@ -1,0 +1,3 @@
+Resource Acquisition is Initialization (RAII)
+In C++, a common way of safely accessing resources is by wrapping a manager class around the handle, which is initialized when the resource is acquired (in the class constructor)
+ and released when it is deleted (in the class destructor).
