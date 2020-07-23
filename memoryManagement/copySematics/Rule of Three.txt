@@ -1,0 +1,7 @@
+
+copy constructor, copy assignment operator, ~or~ destructor
+
+In order to properly manage memory allocation, deallocation and copying behavior, we have seen that there is an intricate relationship between destructor, copy constructor and copy assignment operator.
+ To this end, the Rule of Three states that if a class needs to have an overloaded copy constructor, copy assignment operator, ~or~ destructor, 
+ then it must also implement the other two as well to ensure that memory is managed consistently. As we have seen,
+ the copy constructor and copy assignment operator (which are often almost identical) control how the resource gets copied between objects while the destructor manages the resource deletion.

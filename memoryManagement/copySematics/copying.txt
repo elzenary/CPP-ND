@@ -7,3 +7,9 @@ No copying
 Exclusive ownership
 Deep copying
 Shared ownership
+
+
+constructor: handle first creation for resource and implemented based on ownership policy
+copy constructor: handles copy policy of the resouce (must be by refrence) to avoid infinte loop in copying
+asignment operator: like copy constructor but with = for precreated object and should return value
+destructor: handle resource dealocation based on the copy policy
