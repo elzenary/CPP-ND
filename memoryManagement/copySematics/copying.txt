@@ -2,3 +2,8 @@ shallow copy
 copy constructor
 
 copy policies
+Default copying
+No copying
+Exclusive ownership
+Deep copying
+Shared ownership
