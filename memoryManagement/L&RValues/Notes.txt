@@ -1,0 +1,14 @@
+Lvalues have an address that can be accessed. They are expressions whose evaluation by the compiler determines the identity of objects or functions.
+
+Prvalues do not have an address that is accessible directly. They are temporary expressions used to initialize objects or compute the value of the operand of an operator.
+
+For the sake of simplicity and for compliance with many tutorials, videos and books about the topic, let us refer to prvalues as rvalues from here on.
+
+The two characters l and r are originally derived from the perspective of the assignment operator =, which always expects a rvalue on the right, and which it assigns to a lvalue on the left. In this case, the l stands for left and r for right:
+
+int i = 42;  // lvalue = rvalue;
+
+With many other operators, however, this right-left view is not entirely correct. In more general terms, 
+an lvalue is an entity that points to a specific memory location
+An rvalue is usually a short-lived object, which is only needed in a narrow local scope.
+To simplify things a little, one could think of lvalues as named containers for rvalues.
