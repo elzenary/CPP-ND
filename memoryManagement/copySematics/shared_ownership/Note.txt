@@ -1,0 +1,2 @@
+You may have noted that in the previous code example, the class SharedCopy does not implement the assignment operator. This is a violation of the Rule of Three and thus, 
+if we were to use something like destination3 = source instead of SharedCopy destination3(source), the counter variable would not be properly decremented.
