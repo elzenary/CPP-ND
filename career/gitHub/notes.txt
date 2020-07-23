@@ -1,0 +1,12 @@
+image and descreption
+projects and repo on my profile and appropiate names
+regular commits shown on the chart
+adding readMe
+commit messeges clear
+contribution in open source projects
+issues and pull requests participations
+contributions for documentation is a greatway to start and break the ice
+then you may solve bugs or so on
+to contribute you need to make pull request
+check known repo issues even if documentation typo and then make pull request
+or create an issue if you find something not clear or you find a problem
