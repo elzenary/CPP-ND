@@ -1,0 +1,4 @@
+during compiling use this flag
+-pthread
+
+g++ --std=c++11  -pthread example.cpp ./a.out
