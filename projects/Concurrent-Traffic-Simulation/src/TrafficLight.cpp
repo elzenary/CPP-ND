@@ -13,14 +13,22 @@ T MessageQueue<T>::receive()
     // to wait for and receive new messages and pull them from the queue using move semantics. 
     // The received object should then be returned by the receive function. 
 }
+*/
 
-template <typename T>
-void MessageQueue<T>::send(T &&msg)
+void MessageQueue::send(TrafficLightPhase &&msg)
 {
     // FP.4a : The method send should use the mechanisms std::lock_guard<std::mutex> 
     // as well as _condition.notify_one() to add a new message to the queue and afterwards send a notification.
+
+        // perform vector modification under the lock
+        std::lock_guard<std::mutex> uLock(this->_mutex);
+
+        // add vector to queue
+        //std::cout << "   Message " << msg << " has been sent to the queue" << std::endl;
+        _queue.push_back(std::move(msg));
+        _cond.notify_one(); // notify client after pushing new Vehicle into vector
 }
-*/
+
 
 /* Implementation of class "TrafficLight" */
 TrafficLight::TrafficLight()
@@ -74,7 +82,7 @@ void TrafficLight::cycleThroughPhases()
         
         // and sends an update method to the message queue using move semantics.
         //The cycle duration should be a random value between 4 and 6 seconds. 
-        
+        TrafficLightPhaseMessageQueue.send(std::move(_currentPhase));
         
         // Also, the while-loop should use std::this_thread::sleep_for to wait 1ms between two cycles. 
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
