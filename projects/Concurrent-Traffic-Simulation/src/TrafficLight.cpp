@@ -5,16 +5,18 @@
 
 /* Implementation of class "MessageQueue" */
 
-TrafficLightPhase receive();
+TrafficLightPhase MessageQueue::receive()
 {
     // FP.5a : The method receive should use std::unique_lock<std::mutex> and _condition.wait() 
     // to wait for and receive new messages and pull them from the queue using move semantics. 
     // The received object should then be returned by the receive function. 
     std::unique_lock<std::mutex> uLock(this->_mutex);
+    
+     /*done like the example but to check the reason for passing lamda expression here*/
     _cond.wait(uLock, [this] { return !_queue.empty(); }); // pass unique lock to condition variable
 
     // remove last vector element from queue
-    T msg = std::move(_queue.back());
+    TrafficLightPhase msg = std::move(_queue.back());
     _queue.pop_back();
 
     return msg; // will not be copied due to return value optimization (RVO) in C++
@@ -51,6 +53,14 @@ void TrafficLight::waitForGreen()
     // FP.5b : add the implementation of the method waitForGreen, in which an infinite while-loop 
     // runs and repeatedly calls the receive function on the message queue. 
     // Once it receives TrafficLightPhase::green, the method returns.
+    while(true)
+    {
+      TrafficLightPhase t=  TrafficLightPhaseMessageQueue.receive();
+      
+      if(t==TrafficLightPhase::green)
+          return;
+        
+    }
 }
 TrafficLightPhase TrafficLight::getCurrentPhase()
 {
