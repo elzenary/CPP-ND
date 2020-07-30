@@ -1,0 +1,9 @@
+futures one time only
+conditional variable like messeges many times
+
+std::condition_variable
+wait()
+notify_one() 
+notify_all
+
+conditional variable should be protected with lock for syncronization
