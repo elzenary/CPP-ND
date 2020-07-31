@@ -7,4 +7,12 @@ set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 
 project(HelloWorld)
 
-add_executable(HelloWorld src/main.cpp)
+add_executable(HelloWorld
+ #src/main.cpp
+ "src/UserDB.cpp"
+ "src/UserRegister.cpp"
+ "src/UserLogin.cpp"
+ "ThirdParty/sha256.cpp"
+ # "src/"
+ # "src/"
+ )
