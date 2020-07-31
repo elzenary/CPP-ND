@@ -55,6 +55,7 @@ void TrafficLight::waitForGreen()
     // Once it receives TrafficLightPhase::green, the method returns.
     while(true)
     {
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
       TrafficLightPhase t=  TrafficLightPhaseMessageQueue.receive();
       
       if(t==TrafficLightPhase::green)
@@ -84,26 +85,31 @@ void TrafficLight::cycleThroughPhases()
     // FP.2a : Implement the function with an infinite loop that measures the time between two loop cycles 
     auto start = std::chrono::high_resolution_clock::now();
     auto end = std::chrono::high_resolution_clock::now();
-    auto diff=end-start;
     while (true)
     {
+		
+		 start = std::chrono::high_resolution_clock::now();
         // and toggles the current phase of the traffic light between red and green  
-        if(_currentPhase==TrafficLightPhase::red)
-        {
-            _currentPhase=TrafficLightPhase::green;
-        }
-        else
-        {
-            _currentPhase=TrafficLightPhase::red;
-        }
+		long diff = std::chrono::duration_cast<std::chrono::milliseconds>(start- end).count();/*is cast realy needed?*/
+		if(diff> 5)/*random value*/
+		{
+	        if(_currentPhase==TrafficLightPhase::red)
+	        {
+	            _currentPhase=TrafficLightPhase::green;
+	        }
+	        else
+	        {
+	            _currentPhase=TrafficLightPhase::red;
+	        }
         
-        // and sends an update method to the message queue using move semantics.
-        //The cycle duration should be a random value between 4 and 6 seconds. 
-        TrafficLightPhaseMessageQueue.send(std::move(_currentPhase));
-        
+	        // and sends an update method to the message queue using move semantics.
+	        //The cycle duration should be a random value between 4 and 6 seconds. 
+	        TrafficLightPhaseMessageQueue.send(std::move(_currentPhase));
+        }
         // Also, the while-loop should use std::this_thread::sleep_for to wait 1ms between two cycles. 
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
         
+		end = std::chrono::high_resolution_clock::now();
         
     }
 }
