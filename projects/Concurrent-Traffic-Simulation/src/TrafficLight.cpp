@@ -53,6 +53,7 @@ void TrafficLight::waitForGreen()
     // FP.5b : add the implementation of the method waitForGreen, in which an infinite while-loop 
     // runs and repeatedly calls the receive function on the message queue. 
     // Once it receives TrafficLightPhase::green, the method returns.
+    
     while(true)
     {
       std::this_thread::sleep_for(std::chrono::milliseconds(1));
@@ -83,14 +84,15 @@ void TrafficLight::simulate()
 void TrafficLight::cycleThroughPhases()
 {
     // FP.2a : Implement the function with an infinite loop that measures the time between two loop cycles 
-    auto start = std::chrono::high_resolution_clock::now();
     auto end = std::chrono::high_resolution_clock::now();
+    auto start = std::chrono::high_resolution_clock::now();
+    long diff=0;
     while (true)
     {
 		
 		 start = std::chrono::high_resolution_clock::now();
         // and toggles the current phase of the traffic light between red and green  
-		long diff = std::chrono::duration_cast<std::chrono::milliseconds>(start- end).count();/*is cast realy needed?*/
+        diff =(start-end).count();
 		if(diff> 5)/*random value*/
 		{
 	        if(_currentPhase==TrafficLightPhase::red)
@@ -105,11 +107,13 @@ void TrafficLight::cycleThroughPhases()
 	        // and sends an update method to the message queue using move semantics.
 	        //The cycle duration should be a random value between 4 and 6 seconds. 
 	        TrafficLightPhaseMessageQueue.send(std::move(_currentPhase));
+            end = std::chrono::high_resolution_clock::now();
+            diff=0;
         }
         // Also, the while-loop should use std::this_thread::sleep_for to wait 1ms between two cycles. 
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
         
-		end = std::chrono::high_resolution_clock::now();
+		
         
     }
 }
