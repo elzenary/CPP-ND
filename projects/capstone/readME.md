@@ -1,36 +1,26 @@
+# CPPND: Capstone Hello World Repo
 
-Back simulator
+This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213).
 
-Step 1: Proposed Project
-mini bank system simulation
+The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
 
-Step 2: Scope the Project
-add user database contains userName, hashed password  and balance
-provide the operations to userRegisters and loginUser
-login maximum failures are 3 times then user account is suspended
-can't make new account with the same username/email
-provide admin panel with previlage to control different users
-provide user panel to withdraw deposit and balance checking
-all the changes should be reflected in the users database
-the database is implemented as a file and the program read and write inside it
+In this project, you can build your own C++ application starting with this repo, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
 
-Step 3: Build your application
-the application can be found in /src folder
+## Dependencies for Running Locally
+* cmake >= 3.7
+  * All OSes: [click here for installation instructions](https://cmake.org/install/)
+* make >= 4.1 (Linux, Mac), 3.81 (Windows)
+  * Linux: make is installed by default on most Linux distros
+  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
+  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
+* gcc/g++ >= 5.4
+  * Linux: gcc / g++ is installed by default on most Linux distros
+  * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
+  * Windows: recommend using [MinGW](http://www.mingw.org/)
 
-Step 4: Document Your Work
-nstructions for running the project
+## Basic Build Instructions
 
-an overview of your code structure
-Finite state machine to handle different windows for the user
-modules for DB login register handling
-an explanation of how your submission satisfies the necessary rubric
-rubric point addressed
-A variety of control structures are used in the project.
-The project code is clearly organized into functions.
-The project reads data from an external file or writes data to a file as part of the necessary operation of the program.
-The project accepts input from a user as part of the necessary operation of the program.
-The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
-All class data members are explicitly specified as public, protected, or private.
-
-
-
+1. Clone this repo.
+2. Make a build directory in the top level directory: `mkdir build && cd build`
+3. Compile: `cmake .. && make`
+4. Run it: `./HelloWorld`.
