@@ -7,6 +7,8 @@ mini bank system simulation
 Step 2: Scope the Project
 add user database contains userName, hashed password  and balance
 provide the operations to userRegisters and loginUser
+login maximum failures are 3 times then user account is suspended
+can't make new account with the same username/email
 provide admin panel with previlage to control different users
 provide user panel to withdraw deposit and balance checking
 all the changes should be reflected in the users database
@@ -19,7 +21,8 @@ Step 4: Document Your Work
 nstructions for running the project
 
 an overview of your code structure
-
+Finite state machine to handle different windows for the user
+modules for DB login register handling
 an explanation of how your submission satisfies the necessary rubric
 rubric point addressed
 A variety of control structures are used in the project.
