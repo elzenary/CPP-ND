@@ -17,12 +17,12 @@ int c = 3;
 int main()
 {
     UserRegister r(&db);
-   /* userAdd = "mohammed";
-    userInfo= sha256("pass2");
+    userAdd = "hany";
+    userInfo= sha256("pass2hanny");
     r.RegisterNewUser(userAdd, userInfo);
     // db.addUserToDB(userAdd, userInfo);
 
-    userAdd = "hassan";
+   /* userAdd = "hassan";
     userInfo = sha256("pass3");
     r.RegisterNewUser(userAdd, userInfo);
    // db.addUserToDB(userAdd, userInfo);
