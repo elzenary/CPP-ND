@@ -1,8 +1,8 @@
-#include"class bankOperations.h"
+#include"bankOperations.h"
 
 bankOperations::bankOperations(){
 }
-~bankOperations::bankOperations(){
+bankOperations::~bankOperations(){
 }
 int bankOperations::getBalance()
 {
@@ -17,7 +17,7 @@ bool bankOperations::withdraw(int amount)
     }
     else
     {
-        return false
+        return false;
     }
 }
 void bankOperations::deposit(int amount)

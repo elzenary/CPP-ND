@@ -7,8 +7,8 @@ class bankOperations
     ~bankOperations();
     int getBalance();
     bool withdraw(int amount);
-    bool deposit(int amount);
+    void deposit(int amount);
     
     private:
     int _balance;
-}
+};
