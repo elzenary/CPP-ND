@@ -1,4 +1,6 @@
+
 #include "UserRegister.h"
+#include "UserDB.h"
 
 UserRegister::UserRegister(UserDB* usersLoc)
 {
@@ -8,12 +10,8 @@ UserRegister::UserRegister(UserDB* usersLoc)
 UserRegister::~UserRegister()
 {
 }
-/*
-UserRegister::UserRegister(UserRegister& usr)
-{
-}*/
 
-bool UserRegister::RegisterNewUser(string usr, string pass)
+bool UserRegister::RegisterNewUser(string usr, userInfo_t userInfo)
 {
 	if (this->users->isUserExist(usr))
 	{
@@ -21,7 +19,7 @@ bool UserRegister::RegisterNewUser(string usr, string pass)
 	}
 	else
 	{
-		if (this->users->addUserToDB(usr, pass))
+		if (this->users->addUserToDB(usr, userInfo))
 			return true;
 		else
 			return false;

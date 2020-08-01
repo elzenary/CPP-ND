@@ -9,7 +9,7 @@ public:
 	UserLogin(UserDB* usersLoc);
 	~UserLogin();
 	UserLogin(UserLogin& u);
-	bool RequestUserLogin(string user, string pass);
+	bool RequestUserLogin(string user, string userInfo);
 	bool getUserLoginStaus();
 	bool userLoginOut();
 private:

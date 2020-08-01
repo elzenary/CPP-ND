@@ -7,6 +7,7 @@ using namespace std;
 typedef struct userInfoStruct
 {
 	string pass;
+    int balance;
 }userInfo_t;
 
 class UserDB
@@ -16,16 +17,15 @@ public:
 	~UserDB();
 	UserDB(UserDB& usr);
 	bool isUserExist(string usr);
-	bool getUserInfo(string usrId, string* userInfo);
+	bool getUserInfo(string usrId, userInfo_t* userInfo);
 	int getNumbersOfUsers(void);
-	bool addUserToDB(string id, string userInfo);
-protected:
-	bool getUsersIterators(map<string, string>::iterator& begin, map<string, string>::iterator& end);
+	bool addUserToDB(string id, userInfo_t userInfo);
+
 private:
-	map<string, string> usersBuffer;
+	map<string, userInfo_t> usersBuffer;
 	fstream fs;
 	string id;
-	string usrinfo;
+	userInfo_t usrinfo;
 	void loadDbToRam();
 	void StoreDbToRom();
 };
