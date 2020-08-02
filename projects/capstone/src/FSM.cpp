@@ -36,7 +36,7 @@ void traverseOptions()
             windowStates=windowStates_t::register_w;
             break;      
            case 'i':
-           case 'i':
+           case 'I':
             windowStates=windowStates_t::initial_w;
             break;     
           default:
@@ -67,7 +67,7 @@ void loginWindow()
    cin>>usr>>pass;
    /*TODO verify login*/
    /*if login fails*/
-   cout<<"login fail"<<endl";
+   cout<<"login fail"<<endl;
    traverseOptions();
    
    /*if login pass*/
@@ -91,7 +91,7 @@ void registerWindow()
    
    /*display traversing options*/
    traverseOptions();
-   }
+
 }
 
 /*this function should handle user operations after login
