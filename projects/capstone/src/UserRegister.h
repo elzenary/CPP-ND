@@ -12,7 +12,6 @@ public:
 	UserRegister(UserDB* users);
 	~UserRegister();
 	bool RegisterNewUser(string usr, userInfo_t userInfo);
-	bool deleteUserResister(string usr);
 	
 private:
 	UserDB *users;

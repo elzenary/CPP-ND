@@ -19,7 +19,7 @@ public:
 	bool isUserExist(string usr);
 	bool getUserInfo(string usrId, userInfo_t* userInfo);
 	int getNumbersOfUsers(void);
-	bool addUserToDB(string id, userInfo_t userInfo);
+	void addUserToDB(string id, userInfo_t userInfo);
     void setUserBalance(string usrId,int amount);
 
 private:

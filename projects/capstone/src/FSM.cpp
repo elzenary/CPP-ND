@@ -91,18 +91,21 @@ void loginWindow()
 and handles register operations*/
 void registerWindow()
 {
-    string usr,pass;
+    string usr;
     userInfo_t userInfo;
-    char action;
-    int balance;
    cout<<"welcome to Bank register window"<<endl;
    cout<<"options"<<endl;
    cout<<"enter userName  password initialBalance"<<endl;
    cout<<"Example Ahmed pass123 5000"<<endl;
-   cin>>usr>>pass>>balance;
-   /*TODO verify register and show register output*/
-   cout<<"register status is TODO"<<endl;
-  //if(r.RegisterNewUser(string usr, );
+   cin>>usr>>userInfo.pass>>userInfo.balance;
+  if( r.RegisterNewUser(usr,userInfo) )
+  {
+     cout<<"register done"<<endl; 
+  }
+  else
+  {
+     cout<<"register failed maybe other user with the same name exist in the database"<<endl; 
+  }
    
    /*display traversing options*/
    traverseOptions();

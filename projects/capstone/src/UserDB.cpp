@@ -21,13 +21,22 @@ UserDB::UserDB(UserDB& usr)
 }
 bool UserDB::isUserExist(string usr)
 {
+  if(usersBuffer.find(usr) == usersBuffer.end())
 	return false;
+  else
+    return true;
 }
 bool UserDB::getUserInfo(string usrId, userInfo_t* userInfo)
 {
     if(usersBuffer.find(usrId) != usersBuffer.end())
-        *userInfo = usersBuffer.find(usrId)->second;
-	return true;
+    {
+      *userInfo = usersBuffer.find(usrId)->second;
+	  return true;
+    }
+    else
+    {
+     	return false; 
+    }
 
 }
 void UserDB::setUserBalance(string usrId, int amount)
@@ -39,10 +48,9 @@ int UserDB::getNumbersOfUsers(void)
 {
 	return usersBuffer.size();
 }
-bool UserDB::addUserToDB(string idx, userInfo_t userInfoLocal)
+void UserDB::addUserToDB(string idx, userInfo_t userInfoLocal)
 {
     usersBuffer.insert(pair<string, userInfo_t>(idx, userInfoLocal));
-    return true;
 }
 
 void UserDB::loadDbToRam()

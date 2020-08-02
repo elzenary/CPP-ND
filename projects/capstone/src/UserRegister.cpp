@@ -1,6 +1,7 @@
 
 #include "UserRegister.h"
 #include "UserDB.h"
+#include "sha256.h"
 
 UserRegister::UserRegister(UserDB* usersLoc)
 {
@@ -19,18 +20,11 @@ bool UserRegister::RegisterNewUser(string usr, userInfo_t userInfo)
 	}
 	else
 	{
-		if (this->users->addUserToDB(usr, userInfo))
-			return true;
-		else
-			return false;
-		
+    	userInfo.pass=sha256(userInfo.pass);
+		this->users->addUserToDB(usr, userInfo);
+        return true;
 	}
 	
-}
-
-bool UserRegister::deleteUserResister(string usr)
-{
-	return false;
 }
 
 
