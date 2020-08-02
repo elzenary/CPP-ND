@@ -20,7 +20,7 @@ void traverseOptions()
    cout<<"enter i for initial window"<<endl;
    /*TODO move to login or register window*/
     char userInput;
-    bool validInput=true;
+    bool invalidInput=false;
    do
        {
        cin>>userInput;
@@ -41,10 +41,11 @@ void traverseOptions()
             break;     
           default:
             cout<<"please enter valid input"<<endl;
-            validInput=false;
+            invalidInput=true;
             break;
        }
-   }while(validInput);
+      cout<<"inside switch while"<<endl;
+   }while(invalidInput);
 }
 
 /*initial window after launching the program
@@ -66,9 +67,21 @@ void loginWindow()
    cout<<"Example: Ahmed pass123"<<endl;
    cin>>usr>>pass;
    /*TODO verify login*/
-   /*if login fails*/
+   if(ul.RequestUserLogin(usr,pass) )
+   {
+    /*true then correct result*/
+     cout <<"debug get login status:"<< ul.getUserLoginStaus(usr)<<endl;
+     cout<<"login successful"<<endl;
+     windowStates=windowStates_t::user_w;
+   }
+  else
+  {
+   cout <<"debug get login status:"<< ul.getUserLoginStaus(usr)<<endl;
    cout<<"login fail"<<endl;
    traverseOptions();
+  }
+  
+
    
    /*if login pass*/
    /*TODO move to user window*/
@@ -79,8 +92,9 @@ and handles register operations*/
 void registerWindow()
 {
     string usr,pass;
-    int balance;
+    userInfo_t userInfo;
     char action;
+    int balance;
    cout<<"welcome to Bank register window"<<endl;
    cout<<"options"<<endl;
    cout<<"enter userName  password initialBalance"<<endl;
@@ -88,6 +102,7 @@ void registerWindow()
    cin>>usr>>pass>>balance;
    /*TODO verify register and show register output*/
    cout<<"register status is TODO"<<endl;
+  //if(r.RegisterNewUser(string usr, );
    
    /*display traversing options*/
    traverseOptions();
@@ -105,7 +120,7 @@ void userWindow()
    cout<<"enter w for withdraw"<<endl;
    cout<<"enter g for get balance"<<endl;
     char userInput;
-    bool validInput=true;
+    bool invalidInput=false;
    do
        {
        cin>>userInput;
@@ -131,10 +146,11 @@ void userWindow()
             break;     
           default:
             cout<<"please enter valid input"<<endl;
-            validInput=false;
+            invalidInput=true;
             break;
        }
-   }while(validInput);
+     cout<<"inside switch while"<<endl;
+   }while(invalidInput);
     
 }
 void FSM_Manger()

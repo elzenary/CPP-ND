@@ -1,6 +1,8 @@
 #pragma once
 
 enum class windowStates_t{initial_w,login_w,register_w,user_w};
+extern  UserLogin ul;
+extern UserRegister r;
 void  traverseOptions();
 void initialWindow();
 void loginWindow();

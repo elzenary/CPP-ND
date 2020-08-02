@@ -9,27 +9,58 @@ using namespace std;
 #include"UserRegister.h"
 #include"UserLogin.h"
 #include"bankOperations.h"
+#include"FSM.h"
 
 using namespace std;
 
-string userInfo;
-string userAdd;
-int c = 3;
+  /*FSM testing code*/
+
+ /*for testing valid credintial
+ 
+   userAdd:noIdea
+   pass:noIdea
+   
+   userAdd:ahmed
+   pass:play
+   
+ */
+
+  /*create DB object*/
+   UserDB dbObj;
+  
+  /*create login object*/
+  UserLogin ul(&dbObj);
+
+  /*create register object*/
+  UserRegister r(&dbObj);
+
 int main()
 {
+
+  
+  /*inside infinite loop call FSM manger*/
+  while(true)
+  {
+    	FSM_Manger();
+  }
+
+   /*
+
+   string userInfo;
+string userAdd;
 
    userAdd = "fady11";
     userInfo= sha256("pass2hannyff11");
   userInfo_t userInfoStruct;
   userInfoStruct.pass=userInfo;//"5401ce06e1f9ca668ac4bc9c6ec3d4be40d355228a4de195dff9844c99c6dc15";
-  userInfoStruct.balance=1234;
+  userInfoStruct.balance=1234;*/
   /*
     r.RegisterNewUser(userAdd, userInfoStruct);*/
   
-   UserDB dbObj;
-  string userFady;
+ //  UserDB dbObj;
+ // string userFady;
   //UserRegister r(&dbObj);
-  UserLogin ul(&dbObj);
+  /*UserLogin ul(&dbObj);
   bankOperations b(&dbObj,&ul);
   cout<<"login:"<<ul.RequestUserLogin(userAdd,userInfoStruct.pass)<<endl;
   cout <<"get login status:"<< ul.getUserLoginStaus(userFady)<<endl;
@@ -40,7 +71,7 @@ int main()
   cout<<"currentBalance:"<<bal<<endl;
   b.withdraw(100);
   b.getBalance(bal);
-  cout<<"currentBalance:"<<bal<<endl;
+  cout<<"currentBalance:"<<bal<<endl;*/
   
   
   

@@ -1,4 +1,5 @@
 #include "UserLogin.h"
+#include "sha256.h"
 
 UserLogin::UserLogin(UserDB* usersLoc)
 {
@@ -13,7 +14,7 @@ bool UserLogin::RequestUserLogin(string userID, string pass)
 {
   userInfo_t userInfoGet;
   this->users->getUserInfo(userID, &userInfoGet);
-  if (userInfoGet.pass == pass)
+  if (userInfoGet.pass == sha256(pass) )
   {
     loginStatus = true;
     userName=userID;
