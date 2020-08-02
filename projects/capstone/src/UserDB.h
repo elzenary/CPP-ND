@@ -26,7 +26,6 @@ public:
 
 private:
 	map<string, userInfo_t> usersBuffer;
-	fstream fs;
 	string id;
 	userInfo_t usrinfo;
 

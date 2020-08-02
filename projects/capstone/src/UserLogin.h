@@ -11,7 +11,6 @@ public:
 	bool RequestUserLogin(string user, string userInfo);
 	bool getUserLoginStaus(string &userID_ref);
 	void userLogOut();
-private:
 
 private:
 	UserDB* users;

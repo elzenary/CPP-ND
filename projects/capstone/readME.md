@@ -50,8 +50,18 @@
     * Ex file FSM.cpp line 27, 76, 103, 191
     * Ex file UserDB.cpp line 31, 61, 64, 84
 2. The project code is clearly organized into functions.
+    * Ex file FSM.h line 7:13 and definitions inside FSM.cpp line 17, 59, 67, 94, 119, 189
+    * Ex file UserLogin.h line 11:13 and definitions inside UserLogin.cpp line 13, 29, 34
 3. The project reads data from an external file or writes data to a file as part of the necessary operation of the program.
+    * Ex file UserDB.cpp line 60, 78
 4. The project accepts input from a user as part of the necessary operation of the program.
+    * Ex file FSM.cpp line 29, 74, 102, 133, 141, 151
 5. The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+    * Ex file  UserLogin.h line 6, 8, 15
+    * Ex file  UserDB.h line 13, 15, 27
 6. All class data members are explicitly specified as public, protected, or private.
+    * Ex file  UserLogin.h line 6, 8, 15
+    * Ex file  UserDB.h line 13, 15, 27
 7. At least two variables are defined as references, or two functions use pass-by-reference in the project code.
+    * Ex file  bankOperations.h line 11
+    * Ex file  UserDB.h line 13, 15, 27
