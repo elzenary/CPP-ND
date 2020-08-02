@@ -2,17 +2,22 @@
 
 bankOperations::bankOperations(){
 }
+bankOperations::bankOperations(UserDB *users,UserLogin *userLogin)
+{
+   this->users=users;
+   this->userLogin=userLogin;  
+}
 bankOperations::~bankOperations(){
 }
-int bankOperations::getBalance()
+bool bankOperations::deposit(int amount)
 {
-    return _balance;
-}
-bool bankOperations::withdraw(int amount)
-{
-    if(amount<_balance)
+    string currentUser;
+    userInfo_t userInfo;
+    if(this->userLogin->getUserLoginStaus(currentUser)==true)
     {
-        _balance-=amount;
+        _balance+=amount;
+        users->getUserInfo(currentUser,&userInfo);
+        users->setUserBalance(currentUser,(userInfo.balance+amount));     
         return true;
     }
     else
@@ -20,8 +25,42 @@ bool bankOperations::withdraw(int amount)
         return false;
     }
 }
-void bankOperations::deposit(int amount)
+bool bankOperations::withdraw(int amount)
 {
-    _balance+=amount;
+    string currentUser;
+    userInfo_t userInfo;
+    if(this->userLogin->getUserLoginStaus(currentUser)==true)
+    {
+        users->getUserInfo(currentUser,&userInfo);
+        if(amount<userInfo.balance)
+        {
+            users->setUserBalance(currentUser,(userInfo.balance-amount)); 
+            return true;
+        }
+        else
+        {
+            return false;
+        }    
+    }
+    else
+    {
+        return false;
+    }
+}
+
+int bankOperations::getBalance(int &balance)
+{
+    string currentUser;
+    userInfo_t userInfo;
+    if(this->userLogin->getUserLoginStaus(currentUser)==true)
+    {
+        users->getUserInfo(currentUser,&userInfo);
+        balance=userInfo.balance; 
+        return true;
+    }
+    else
+    {
+        return false;
+    }    
 }
 
