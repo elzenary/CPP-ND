@@ -43,16 +43,19 @@ the application can be found in /src folder
 Step 4: Document Your Work
 nstructions for running the project
 
-an overview of your code structure
-Finite state machine to handle different windows for the user
-modules for DB, login, register handling
+## an overview of your code structure
+Finite state machine to handle different window states and the transitions
+classes for UserDB, UserLogin, UserRegister and bankOperations  
+pointer for UserDB is passed to other classes
+pointer to UserLogin is passed to bankOperations
+main to create the objects and start running FSM
 
 an explanation of how your submission satisfies the necessary rubric
-rubric point addressed
-A variety of control structures are used in the project.
-The project code is clearly organized into functions.
-The project reads data from an external file or writes data to a file as part of the necessary operation of the program.
-The project accepts input from a user as part of the necessary operation of the program.
-The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
-All class data members are explicitly specified as public, protected, or private.
-At least two variables are defined as references, or two functions use pass-by-reference in the project code.
+## Rubric point addressed
+1.A variety of control structures are used in the project.
+2.The project code is clearly organized into functions.
+3.The project reads data from an external file or writes data to a file as part of the necessary operation of the program.
+4.The project accepts input from a user as part of the necessary operation of the program.
+5.The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+6.All class data members are explicitly specified as public, protected, or private.
+7.At least two variables are defined as references, or two functions use pass-by-reference in the project code.
