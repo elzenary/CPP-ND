@@ -30,6 +30,11 @@ bool UserDB::getUserInfo(string usrId, userInfo_t* userInfo)
 	return true;
 
 }
+void UserDB::setUserBalance(string usrId, int amount)
+{
+    if(usersBuffer.find(usrId) != usersBuffer.end())
+        usersBuffer.find(usrId)->second.balance=amount;
+}
 int UserDB::getNumbersOfUsers(void)
 {
 	return usersBuffer.size();

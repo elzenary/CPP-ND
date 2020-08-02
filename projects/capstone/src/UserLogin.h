@@ -10,13 +10,13 @@ public:
 	~UserLogin();
 	UserLogin(UserLogin& u);
 	bool RequestUserLogin(string user, string userInfo);
-	bool getUserLoginStaus();
+	bool getUserLoginStaus(string &userID_ref);
 	bool userLoginOut();
 private:
 
 private:
 	UserDB* users;
 	bool loginStatus;
-	
+	string userName;
 };
 

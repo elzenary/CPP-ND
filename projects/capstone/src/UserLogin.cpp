@@ -17,6 +17,7 @@ bool UserLogin::RequestUserLogin(string userID, string pass)
   if (userInfoGet.pass == pass)
   {
     loginStatus = true;
+    userName=userID;
     return	true;
   }
   else
@@ -27,8 +28,9 @@ bool UserLogin::RequestUserLogin(string userID, string pass)
 
 }
 
-bool UserLogin::getUserLoginStaus()
+bool UserLogin::getUserLoginStaus(string &userID_ref)
 {
+    userID_ref=userName;
 	return loginStatus;
 }
 bool UserLogin::userLoginOut()
