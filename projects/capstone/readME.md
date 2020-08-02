@@ -55,3 +55,4 @@ The project reads data from an external file or writes data to a file as part of
 The project accepts input from a user as part of the necessary operation of the program.
 The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
 All class data members are explicitly specified as public, protected, or private.
+At least two variables are defined as references, or two functions use pass-by-reference in the project code.
