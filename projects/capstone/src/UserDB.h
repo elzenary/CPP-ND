@@ -21,12 +21,13 @@ public:
 	int getNumbersOfUsers(void);
 	void addUserToDB(string id, userInfo_t userInfo);
     void setUserBalance(string usrId,int amount);
+    void loadDbToRam();
+	void StoreDbToRom();
 
 private:
 	map<string, userInfo_t> usersBuffer;
 	fstream fs;
 	string id;
 	userInfo_t usrinfo;
-	void loadDbToRam();
-	void StoreDbToRom();
+
 };

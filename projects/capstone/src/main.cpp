@@ -37,10 +37,12 @@ using namespace std;
   /*create register object*/
   UserRegister r(&dbObj);
 
+/*create bank operations object*/
+ bankOperations b(&dbObj,&ul);
+
 int main()
 {
-
-  
+ 
   /*inside infinite loop call FSM manger*/
   while(true)
   {

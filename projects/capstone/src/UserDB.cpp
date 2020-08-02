@@ -7,7 +7,7 @@
 using namespace std;
 
 UserDB::UserDB() {
-    cout<<"constructor call"<<endl;
+    //cout<<"constructor call"<<endl;
 	loadDbToRam();
 }
 UserDB::~UserDB()
@@ -16,7 +16,7 @@ UserDB::~UserDB()
 }
 UserDB::UserDB(UserDB& usr)
 {
-     cout<<"copy constructor call"<<endl;
+     //cout<<"copy constructor call"<<endl;
 	loadDbToRam();
 }
 bool UserDB::isUserExist(string usr)
@@ -55,12 +55,12 @@ void UserDB::addUserToDB(string idx, userInfo_t userInfoLocal)
 
 void UserDB::loadDbToRam()
 {
-    std::cout << "loadDb file not open"<<endl;
+    //std::cout << "loadDb file not open"<<endl;
     std::string line;
     std::ifstream filestream("../src/authdb.data");
 	if (filestream)
 	{
-         std::cout << "loadDb file open"<<endl;
+         //std::cout << "loadDb file open"<<endl;
         while( std::getline(filestream, line) )
         {
             std::istringstream linestream(line);
@@ -69,24 +69,24 @@ void UserDB::loadDbToRam()
             /*for debugging*/
             /*std::cout << "constructor inserted id:"<<UserDB::usersBuffer.find(id)->first << " inseted pass:" << (UserDB::usersBuffer.find(id)->second) <<"inserted balance:"<<(UserDB::usersBuffer.find(id)->second).balance << endl;*/
         }
-        std::cout << "loadDb eof"<<endl;
+        //std::cout << "loadDb eof"<<endl;
 	}
 }
 
 void UserDB::StoreDbToRom()
 {
     std::ofstream ofilestream("../src/authdb.data");
-    std::cout << "storeDb file not open"<<endl;
+    //std::cout << "storeDb file not open"<<endl;
 	if (ofilestream)
 	{
-        std::cout << "storeDb file opened"<<endl;
+        //std::cout << "storeDb file opened"<<endl;
 		map<string, userInfo_t>::iterator it; 
 		for (it = usersBuffer.begin(); it != usersBuffer.end(); it++)
 		{
 			ofilestream <<it->first << " "<< it->second.pass <<  " "<< it->second.balance<< endl;
-			cout <<it->first << " "<< it->second.pass <<  " "<< it->second.balance<< endl;
+			//cout <<it->first << " "<< it->second.pass <<  " "<< it->second.balance<< endl;
 		}
-        cout << "destructor writing in file end1"<<endl;
+        //cout << "destructor writing in file end1"<<endl;
 
 	}
 }

@@ -48,7 +48,7 @@ bool bankOperations::withdraw(int amount)
     }
 }
 
-int bankOperations::getBalance(int &balance)
+bool bankOperations::getBalance(int &balance)
 {
     string currentUser;
     userInfo_t userInfo;

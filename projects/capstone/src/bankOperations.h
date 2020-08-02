@@ -8,7 +8,7 @@ class bankOperations
     bankOperations();
     bankOperations(UserDB *users,UserLogin *userLogin);
     ~bankOperations();
-    int getBalance(int &balance);
+    bool getBalance(int &balance);
     bool withdraw(int amount);
     bool deposit(int amount);
     

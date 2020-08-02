@@ -38,13 +38,12 @@ void traverseOptions()
            case 'i':
            case 'I':
             windowStates=windowStates_t::initial_w;
-            break;     
+            break;       
           default:
             cout<<"please enter valid input"<<endl;
             invalidInput=true;
             break;
        }
-      cout<<"inside switch while"<<endl;
    }while(invalidInput);
 }
 
@@ -70,14 +69,14 @@ void loginWindow()
    if(ul.RequestUserLogin(usr,pass) )
    {
     /*true then correct result*/
-     cout <<"debug get login status:"<< ul.getUserLoginStaus(usr)<<endl;
+     //cout <<"debug get login status:"<< ul.getUserLoginStaus(usr)<<endl;
      cout<<"login successful"<<endl;
      windowStates=windowStates_t::user_w;
    }
   else
   {
-   cout <<"debug get login status:"<< ul.getUserLoginStaus(usr)<<endl;
-   cout<<"login fail"<<endl;
+   //cout <<"debug get login status:"<< ul.getUserLoginStaus(usr)<<endl;
+   cout<<"login fail user name or password are wrong"<<endl;
    traverseOptions();
   }
   
@@ -116,12 +115,13 @@ void registerWindow()
 deposit withdraw getBalance*/
 void userWindow()
 {
-   char action;
    cout<<"welcome user window"<<endl;
    cout<<"options"<<endl;
    cout<<"enter d for deposit"<<endl;
    cout<<"enter w for withdraw"<<endl;
    cout<<"enter g for get balance"<<endl;
+   cout<<"enter o for log out"<<endl;
+    int amount;
     char userInput;
     bool invalidInput=false;
    do
@@ -133,26 +133,48 @@ void userWindow()
            case 'd':
            case 'D':
             /*get amount from the user*/
+            cout<<"please enter amount"<<endl;
+            cin>>amount;
             /*do operation*/
+             b.deposit(amount);
             /*show result*/
+           cout<<"depost is done"<<endl;
             break;
            case 'w':
            case 'W':
             /*get amount from the user*/
+             cout<<"please enter amount"<<endl;
+             cin>>amount;
             /*do operation*/
+            if( b.withdraw(amount) )
+            {
+              cout<<"operation is done"<<endl;
+            }
+            else
+            {
+             	cout<<"operation failed no enough balance"<<endl;
+            }
             /*show result*/
             break;      
            case 'g':
            case 'G':
             /*do operation*/
+             cout<<"please enter amount"<<endl;
+              b.getBalance(amount);
+             cout<<"balance: "<<amount<<endl;
             /*show result*/
             break;     
+           case 'o':
+           case 'O':
+            ul.userLogOut();
+            cout<<"user logged out"<<endl;
+            windowStates=windowStates_t::initial_w;
+            break;   
           default:
             cout<<"please enter valid input"<<endl;
             invalidInput=true;
             break;
        }
-     cout<<"inside switch while"<<endl;
    }while(invalidInput);
     
 }
@@ -179,9 +201,10 @@ void FSM_Manger()
         default:
             /*error*/
             /*show an error occured error*/
+        	cout<<"an unexpected error has occureed"<<endl;
             /*go to initial window*/
+        	windowStates=windowStates_t::initial_w;
         break;
-        
-        break;        
+ 
     }
 }
