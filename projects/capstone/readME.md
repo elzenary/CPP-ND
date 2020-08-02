@@ -1,10 +1,23 @@
 # CPPND: Capstone mini Back simulator
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213).
+## project Steps
+* Step 1: Proposed Project
+    * mini bank system simulation
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+* Step 2: Scope the Project
+    * add user database contains userName, hashed password  and balance
+    * provide the operations to userRegisters and loginUser
+    * User can't register new account with the same username
+    * provide user panel to withdraw deposit and balance checking after sucessuful login
+    * all the changes should be reflected in the users database
+    * the database is implemented as a file and the program read and write inside it
+    * add the abillity to exit the program safely
 
-In this project, you can build your own C++ application starting with this repo, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+* Step 3: Build your application
+    * the application can be found in /src folder
+
+* Step 4: Document Your Work
+    * the detils are mentioned below
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -25,37 +38,18 @@ In this project, you can build your own C++ application starting with this repo,
 3. Compile: `cmake .. && make`
 4. Run it: `./miniBankSimulator`.
 
-project Steps
-Step 1: Proposed Project
-mini bank system simulation
+## an overview of the code structure
+    * Finite state machine to handle different window states and the transitions
+    * Classes for UserDB, UserLogin, UserRegister and bankOperations  
+    * Pointer for UserDB is passed to other classes
+    * Pointer to UserLogin is passed to bankOperations
+    * main to create the objects and start running FSM
 
-Step 2: Scope the Project
-add user database contains userName, hashed password  and balance
-provide the operations to userRegisters and loginUser
-can't register new account with the same username/
-provide user panel to withdraw deposit and balance checking after sucessuful login
-all the changes should be reflected in the users database
-the database is implemented as a file and the program read and write inside it
-
-Step 3: Build your application
-the application can be found in /src folder
-
-Step 4: Document Your Work
-nstructions for running the project
-
-## an overview of your code structure
-Finite state machine to handle different window states and the transitions
-classes for UserDB, UserLogin, UserRegister and bankOperations  
-pointer for UserDB is passed to other classes
-pointer to UserLogin is passed to bankOperations
-main to create the objects and start running FSM
-
-an explanation of how your submission satisfies the necessary rubric
 ## Rubric point addressed
-1.A variety of control structures are used in the project.
-2.The project code is clearly organized into functions.
-3.The project reads data from an external file or writes data to a file as part of the necessary operation of the program.
-4.The project accepts input from a user as part of the necessary operation of the program.
-5.The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
-6.All class data members are explicitly specified as public, protected, or private.
-7.At least two variables are defined as references, or two functions use pass-by-reference in the project code.
+1. A variety of control structures are used in the project.
+2. The project code is clearly organized into functions.
+3. The project reads data from an external file or writes data to a file as part of the necessary operation of the program.
+4. The project accepts input from a user as part of the necessary operation of the program.
+5. The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+6. All class data members are explicitly specified as public, protected, or private.
+7. At least two variables are defined as references, or two functions use pass-by-reference in the project code.
