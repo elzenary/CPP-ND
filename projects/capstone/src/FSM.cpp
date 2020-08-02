@@ -5,6 +5,8 @@
 #include"bankOperations.h"
 #include"FSM.h"
 #include<iostream>
+#include <stdlib.h>
+
 using namespace std;
 
 /*global var which holds the currenf state*/
@@ -18,6 +20,7 @@ void traverseOptions()
    cout<<"enter l for login"<<endl;
    cout<<"enter r for register"<<endl;
    cout<<"enter i for initial window"<<endl;
+   cout<<"enter x for exit"<<endl;
    /*TODO move to login or register window*/
     char userInput;
     bool invalidInput=false;
@@ -38,7 +41,11 @@ void traverseOptions()
            case 'i':
            case 'I':
             windowStates=windowStates_t::initial_w;
-            break;       
+            break;    
+           case 'x':
+           case 'X':
+			  exit( 0 );
+            break;   
           default:
             cout<<"please enter valid input"<<endl;
             invalidInput=true;
@@ -79,11 +86,7 @@ void loginWindow()
    cout<<"login fail user name or password are wrong"<<endl;
    traverseOptions();
   }
-  
 
-   
-   /*if login pass*/
-   /*TODO move to user window*/
 }
 
 /*this function represet user register state
@@ -121,6 +124,7 @@ void userWindow()
    cout<<"enter w for withdraw"<<endl;
    cout<<"enter g for get balance"<<endl;
    cout<<"enter o for log out"<<endl;
+   cout<<"enter x for exit"<<endl;
     int amount;
     char userInput;
     bool invalidInput=false;
@@ -169,6 +173,10 @@ void userWindow()
             ul.userLogOut();
             cout<<"user logged out"<<endl;
             windowStates=windowStates_t::initial_w;
+            break;   
+           case 'x':
+           case 'X':
+			  exit( 0 );
             break;   
           default:
             cout<<"please enter valid input"<<endl;

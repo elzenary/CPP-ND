@@ -22,8 +22,6 @@ bool UserRegister::RegisterNewUser(string usr, userInfo_t userInfo)
 	{
     	userInfo.pass=sha256(userInfo.pass);
 		this->users->addUserToDB(usr, userInfo);
-        this->users->StoreDbToRom();
-        //this->users->loadDbToRam();
         return true;
 	}
 	
