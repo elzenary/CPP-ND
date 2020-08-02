@@ -1,6 +1,5 @@
 #include "UserLogin.h"
 
-
 UserLogin::UserLogin(UserDB* usersLoc)
 {
 	this->users = usersLoc;
@@ -25,29 +24,14 @@ bool UserLogin::RequestUserLogin(string userID, string pass)
     loginStatus = false;
     return false;
   }
-
 }
-
 bool UserLogin::getUserLoginStaus(string &userID_ref)
 {
     userID_ref=userName;
 	return loginStatus;
 }
-bool UserLogin::userLoginOut()
+void UserLogin::userLogOut()
 {
-	if (loginStatus == false)
-	{
-		return false;
-	}
-	else
-	{
-		loginStatus = false;
-		return true;
-	}
-}
-
-UserLogin::UserLogin(UserLogin& u)
-{
-	loginStatus = false;
-	this->users = u.users;
+userName="";
+loginStatus=false;
 }

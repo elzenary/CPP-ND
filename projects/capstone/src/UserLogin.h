@@ -8,10 +8,9 @@ class UserLogin
 public:
 	UserLogin(UserDB* usersLoc);
 	~UserLogin();
-	UserLogin(UserLogin& u);
 	bool RequestUserLogin(string user, string userInfo);
 	bool getUserLoginStaus(string &userID_ref);
-	bool userLoginOut();
+	void userLogOut();
 private:
 
 private:
