@@ -47,6 +47,8 @@
 
 ## Rubric point addressed
 1. A variety of control structures are used in the project.
+    * Ex file FSM.cpp line 27, 76, 103, 191
+    * Ex file UserDB.cpp line 31, 61, 64, 84
 2. The project code is clearly organized into functions.
 3. The project reads data from an external file or writes data to a file as part of the necessary operation of the program.
 4. The project accepts input from a user as part of the necessary operation of the program.
