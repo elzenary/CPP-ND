@@ -17,7 +17,7 @@
     * the application can be found in /src folder
 
 * Step 4: Document Your Work
-    * the detils are mentioned below
+    * the details are mentioned below
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -64,4 +64,4 @@
     * Ex file  UserDB.h line 13, 15, 27
 7. At least two variables are defined as references, or two functions use pass-by-reference in the project code.
     * Ex file  bankOperations.h line 11
-    * Ex file  UserDB.h line 13, 15, 27
+    * Ex file  UserLogin.h line 12
