@@ -1,4 +1,4 @@
-# CPPND: Capstone Hello World Repo
+# CPPND: Capstone mini Back simulator
 
 This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213).
 
@@ -23,4 +23,35 @@ In this project, you can build your own C++ application starting with this repo,
 1. Clone this repo.
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
-4. Run it: `./HelloWorld`.
+4. Run it: `./miniBankSimulator`.
+
+project Steps
+Step 1: Proposed Project
+mini bank system simulation
+
+Step 2: Scope the Project
+add user database contains userName, hashed password  and balance
+provide the operations to userRegisters and loginUser
+can't register new account with the same username/
+provide user panel to withdraw deposit and balance checking after sucessuful login
+all the changes should be reflected in the users database
+the database is implemented as a file and the program read and write inside it
+
+Step 3: Build your application
+the application can be found in /src folder
+
+Step 4: Document Your Work
+nstructions for running the project
+
+an overview of your code structure
+Finite state machine to handle different windows for the user
+modules for DB, login, register handling
+
+an explanation of how your submission satisfies the necessary rubric
+rubric point addressed
+A variety of control structures are used in the project.
+The project code is clearly organized into functions.
+The project reads data from an external file or writes data to a file as part of the necessary operation of the program.
+The project accepts input from a user as part of the necessary operation of the program.
+The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+All class data members are explicitly specified as public, protected, or private.
