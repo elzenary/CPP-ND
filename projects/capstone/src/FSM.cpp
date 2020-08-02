@@ -8,7 +8,7 @@
 using namespace std;
 
 /*global var which holds the currenf state*/
-windowStates_t windowStates=initial_w;
+windowStates_t windowStates=windowStates_t::initial_w;
 
 /*helper function which change the state based on user input
 this function is called in different states to hadle the program traversing*/

@@ -14,7 +14,7 @@ add_executable(	miniBankSimulator
  "src/UserLogin.cpp"
  "ThirdParty/sha256.cpp"
  "src/bankOperations.cpp"
- # "src/"
+ "src/FSM.cpp"
  )
  
  include_directories(
